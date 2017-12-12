@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>MMDA</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='reach.css') }}">
+</head>
+
+<body>
+  <div class="welcome">
+    <h1>{{title}}</h1>
+    <hr/>
+  </div>
+  <div class="sidebar">
+    <div class="sidebar-inner">
+      <a href="/" id="home-button">Home</a>
+      <a href="/reports" id="reports-button">Reports</a>
+      <hr/>
+      <a/>
+      <div class="side-no-home">
+        <a href="/metadata">Metadata Query</a>
+        <a href="/orphanreport">Orphan Report</a>
+        <a href="/sterilereport">Sterile Report</a>
+        <a href="/reach" id="selected">Reach Query</a>
+        <a href="/timerange">Time-Range Query</a>
+      </div>
+    </div>
+  </div>
+  <div class="clear-floated"></div>
+  <div class="intro">
+    <h2>Query Reachable DAGRs</h2>
+    <br />
+    <br />
+    <hr />
+    <br />
+    <br />
+    <br />
+    <br />
+    <form method="POST">
+      <select name="start-dagr-file" class="dagr-file-selection" style="width:300px">
+        {% for x in dagrs %}
+        <option value="{{ x }}" {% if loop.first %} SELECTED{% endif %}>{{ x }}</option>
+        {% endfor %}
+      </select>
+      <select name="direction" class="dir-selection">
+        {% for x in dirs %}
+        <option value="{{ x }}" {% if loop.first %} SELECTED{% endif %}>{{ x }}</option>
+        {% endfor %}
+      </select>
+      <select name="level" class="level-selection">
+        {% for x in levels %}
+        <option value="{{ x }}" {% if loop.first %} SELECTED{% endif %}>{{ x }}</option>
+        {% endfor %}
+      </select>
+      <input class="submit-date" type="submit" value="Submit" name="submit" />
+    </form>
+    <br />
+  </div>
+</body>
+
+</html>

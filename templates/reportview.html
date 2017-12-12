@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>MMDA</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='reportview.css') }}">
+</head>
+
+<body>
+  <div class="welcome">
+    <h1>{{title}}</h1>
+    <hr/>
+  </div>
+  <div class="sidebar">
+    <div class="sidebar-inner">
+      <a href="/" id="home-button">Home</a>
+      <a href="/reports" id="reports-button">Reports</a>
+      <hr/>
+      <a/>
+      <div class="side-no-home">
+        <a href="/metadata">Metadata Query</a>
+        <a href="/orphanreport">Orphan Report</a>
+        <a href="/sterilereport">Sterile Report</a>
+        <a href="/reach">Reach Query</a>
+        <a href="/timerange">Time-Range Query</a>
+      </div>
+    </div>
+  </div>
+  <div class="clear-floated"></div>
+  <div class="intro">
+    <table>
+      <tr>
+        <th>GUID</th>
+        <td>{{dagr.getGUID()}}</td>
+      </tr>
+      <tr>
+        <th>Name</th>
+        <td>{{dagr.getName()}}</td>
+      </tr>
+      <tr>
+        <th>Annotations</th>
+        <td>{{dagr.getAnnotations()}}</td>
+      </tr>
+      <tr>
+        <th>Type</th>
+        <td>{{dagr.getType()}}</td>
+      </tr>
+      <tr>
+        <th>Parent</th>
+        <td>{{dagr.getShortPath()}}</td>
+      </tr>
+      <tr>
+        <th>Full Path</th>
+        <td style="font-size:16px">{{dagr.getPath()}}</td>
+      </tr>
+      <tr>
+        <th>Date Created</th>
+        <td>{{dagr.getCreated()}}</td>
+      </tr>
+      <tr>
+        <th>Date Modified</th>
+        <td>{{dagr.getModified()}}</td>
+      </tr>
+    </table>
+    <table class="descendant-table">
+      <tr>
+        <th style="text-align:left">Descendants</th>
+      </tr>
+      {% for row in descendants %}
+      <tr>
+        <td class="des">
+          {{row.getName()}}
+          <form action="/reportview" method="POST">
+            <input type="Submit" value="View" name={{row.getGUID()}} style="width:100%" />
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+    <table class="ancestor-table">
+      <tr>
+        <th style="text-align:left">Ancestors</th>
+      </tr>
+      {% for row in ancestors %}
+      <tr>
+        <td class="ans">
+          {{row.getName()}}
+          <form action="/reportview" method="POST">
+            <input type="Submit" value="View" name={{row.getGUID()}} style="width:100%" />
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>MMDA</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='report.css') }}">
+</head>
+
+<body>
+  <div class="welcome">
+    <h1>{{title}}</h1>
+    <hr/>
+  </div>
+  <div class="sidebar">
+    <div class="sidebar-inner">
+      <a href="/" id="home-button">Home</a>
+      <hr/>
+      <a/>
+      <div class="side-no-home">
+        <a href="/metadata">Metadata Query</a>
+        <a href="/orphanreport">Orphan Report</a>
+        <a href="/sterilereport">Sterile Report</a>
+        <a href="/reach">Reach Query</a>
+        <a href="/timerange">Time-Range Query</a>
+      </div>
+    </div>
+  </div>
+  <div class="clear-floated"></div>
+  <div class="table">
+    <table style="width:90%">
+      <tr>
+        <th>Name</th>
+        <th>Containing DAGR</th>
+        <th>Type</th>
+        <th>Created</th>
+        <th>Modified</th>
+        <th>Annotations</th>
+        <th>Author</th>
+        <th>Inspect</th>
+      </tr>
+      {% for row in dagrs %}
+      <tr>
+        <td>{{ row.getName() }}</td>
+        <td>{{ row.getShortPath() }}</td>
+        <td>{{ row.getType() }}</td>
+        <td>{{ row.getCreated() }}</td>
+        <td>{{ row.getModified() }}</td>
+        <td>{{ row.getAnnotations() }}</td>
+        <td>{{ row.getAuthorName() }}</td>
+        <td>
+          <form action="/reportview" method="POST">
+            <input type="Submit" value="View" name={{row.getGUID()}} style="width:100%" />
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</body>
+
+</html>

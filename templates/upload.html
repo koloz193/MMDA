@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>MMDA</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='upload.css') }}">
+</head>
+
+<body>
+  <div class="welcome">
+    <h1>{{title}}</h1>
+    <hr>
+  </div>
+  <div class="sidebar">
+    <div class="sidebar-inner">
+      <a href="/" id="home-button">Home</a>
+      <hr />
+      <a/>
+      <div class="side-no-home">
+        <a href="/makeDagr">Create DAGR</a>
+        <a href="/upload" id="selected">File Upload</a>
+        <a href="/bulk">Bulk Upload</a>
+        <a href="/dagrdelete">DAGR Delete</a>
+        <a href="/reports">Reports</a>
+      </div>
+    </div>
+  </div>
+  <div class="clear-floated"></div>
+  <div id="upload-box">
+    <div id="upload">
+      <form method="POST">
+        <input class="file-url" name="file" type="text" placeholder="Enter URL For File" />
+        <input class="file-annotations" name="file-annotations" type="text" placeholder="Annotations for file" />
+        <select name="topic" class="dagr-selection">
+          {% for x in dagr_list %}
+          <option value="{{ x }}" {% if loop.first %} SELECTED{% endif %}>{{ x }}</option>
+          {% endfor %}
+        </select>
+        <select name="author" class="dagr-selection">
+          {% for x in author_list %}
+          <option value="{{ x }}" {% if loop.first %} SELECTED{% endif %}>{{ x }}</option>
+          {% endfor %}
+        </select>
+        <input class="dagr-selection" type="text" placeholder="Enter new Author Name if 'new' selected" name="author-name" />
+        <input class="file-initialize" type="submit" value="Submit" />
+      </form>
+    </div>
+
+  </div>
+
+</body>
+
+</html>

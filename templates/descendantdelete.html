@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>MMDA</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='descendantdelete.css') }}">
+</head>
+
+<body>
+  <div class="welcome">
+    <h1>{{title}}</h1>
+    <hr/>
+  </div>
+  <div class="sidebar">
+    <div class="sidebar-inner">
+      <a href="/" id="home-button">Home</a>
+      <hr/>
+      <a/>
+      <div class="side-no-home">
+        <a href="/makeDagr">Create DAGR</a>
+        <a href="/upload">File Upload</a>
+        <a href="/bulk">Bulk Upload</a>
+        <a href="/dagrdelete" id="selected">DAGR Delete</a>
+        <a href="/reports">Reports</a>
+      </div>
+    </div>
+  </div>
+  <div class="clear-floated"></div>
+  <h3>{{prompt}}</h3>
+  <div class="table">
+    <table style="width:100%">
+      <tr>
+        <th>Name</th>
+        <th>Path</th>
+        <th>Type</th>
+        <th>Created</th>
+        <th>Modified</th>
+        <th>Annotations</th>
+        <th>Author</th>
+      </tr>
+      {% for row in dagrs %}
+      <tr>
+        <td>{{ row.getName() }}</td>
+        <td>{{ row.getPath() }}</td>
+        <td>{{ row.getType() }}</td>
+        <td>{{ row.getCreated() }}</td>
+        <td>{{ row.getModified() }}</td>
+        <td>{{ row.getAnnotations() }}</td>
+        <td>{{ row.getAuthorName() }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    <div id="confirm-button">
+      <form id="shallow" action="/descendantdeleteshallow" method="POST">
+        <input type="submit" value="Shallow" name={{dagr_guid}} />
+      </form>
+      <!-- <form id="deep" action="/descendantdeletedeep" method="POST">
+        <input type="submit" value="Deep" />
+      </form> -->
+    </div>
+  </div>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+</body>
+
+</html>

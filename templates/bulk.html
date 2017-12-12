@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>MMDA</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='bulk.css') }}">
+</head>
+
+<body>
+  <div class="welcome">
+    <h1>{{title}}</h1>
+    <hr/>
+  </div>
+  <div class="sidebar">
+    <div class="sidebar-inner">
+      <a href="/" id="home-button">Home</a>
+      <hr/>
+      <a/>
+      <div class="side-no-home">
+        <a href="/makeDagr">Create DAGR</a>
+        <a href="/upload">File Upload</a>
+        <a href="/bulk" id="selected">Bulk Upload</a>
+        <a href="/dagrdelete">DAGR Delete</a>
+        <a href="/reports">Reports</a>
+      </div>
+    </div>
+  </div>
+  <div class="clear-floated"></div>
+  <div class="intro">
+    <form method="POST">
+      <input class="bulk-path" type="text" name="path" placeholder="Enter path for bulk upload" />
+      <input class="new-auth" type="text" placeholder="Enter new Author Name if 'new' selected" name="author-name" />
+      <select name="authors" class="author-selection" style="width:75px;padding-left:20px">
+        {% for x in author_list %}
+        <option value="{{ x }}" {% if loop.first %} SELECTED{% endif %}>{{ x }}</option>
+        {% endfor %}
+      </select>
+      <input class="submit" type="submit" value="Generate" name="submit" />
+    </form>
+  </div>
+</body>
+
+</html>

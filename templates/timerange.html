@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>MMDA</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='timerange.css') }}">
+</head>
+
+<body>
+  <div class="welcome">
+    <h1>{{title}}</h1>
+    <hr/>
+  </div>
+  <div class="sidebar">
+    <div class="sidebar-inner">
+      <a href="/" id="home-button">Home</a>
+      <a href="/reports" id="reports-button">Reports</a>
+      <hr/>
+      <a/>
+      <div class="side-no-home">
+        <a href="/metadata">Metadata Query</a>
+        <a href="/orphanreport">Orphan Report</a>
+        <a href="/sterilereport">Sterile Report</a>
+        <a href="/reach">Reach Query</a>
+        <a href="/timerange" id="selected">Time-Range Query</a>
+      </div>
+    </div>
+  </div>
+  <div class="clear-floated"></div>
+  <div class="intro">
+    <h2>Query DAGR Information Based on Metadata</h2>
+    <hr />
+    <br />
+    <br />
+    <br />
+    <br />
+    <h3>Date Input</h3>
+    <form method="POST">
+      <input class="date-in" type="date" name="date-from" />
+      <input class="date-in" type="date" name="date-to" />
+      <input class="submit-date" type="submit" value="Submit" name="submit" />
+    </form>
+  </div>
+</body>
+
+</html>

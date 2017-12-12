@@ -1,0 +1,127 @@
+.welcome {
+  font-family: monospace;
+  font-size: 16px;
+  /*float: right;*/
+  margin-left: 275px;
+  text-align: center;
+}
+
+h2 {
+  font-family: monospace;
+  font-size: 25px;
+}
+
+#home-button {
+    font-size: 30px;
+}
+
+#home-button:hover {
+  color:#abdbd9;
+}
+
+#DAGR-selection {
+  float: right;
+}
+
+#upload-box {
+  float: right;
+  width: 80%;
+}
+
+.sidebar {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+  background: -webkit-linear-gradient(right, #0e0f0f, #2f3030);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #0e0f0f, #2f3030);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #0e0f0f, #2f3030);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #0e0f0f, #2f3030);
+  /* Standard syntax (must be last) */
+
+  /*box-shadow: 10px 0px #efeaea;*/
+}
+
+.sidebar-inner {
+  padding: 5px 5px 5px 5px;
+  margin-right: 10px;
+  min-height: 60px;
+  height: 90%;
+  color: #87f2ee;
+  font-size: 12px;
+}
+
+.sidebar-inner a {
+  padding: 15px 15px 15px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.side-no-home a:hover {
+  color:#abdbd9;
+  text-indent: 10px;
+}
+
+#selected {
+  color: #79d1cc;
+  font-size: 30px;
+}
+
+.clear-floater {
+  clear: both;
+  height: 1px;
+  font-size: 1px;
+  line-height: 1px;
+  padding: 0;
+  margin: 0;
+  float: right;
+}
+
+#upload-box {
+  float: right;
+  width: 80%;
+  height: 300px;
+  text-align: center;
+}
+
+.file-url {
+  float: left;
+  width: 45%;
+  height: 200px;
+  border: 1px solid;
+  font-size: 24px;
+  text-align: center;
+}
+
+.file-annotations {
+  float: right;
+  width: 45%;
+  height: 200px;
+  border: 1px solid;
+  font-size: 24px;
+  text-align: center;
+}
+
+.dagr-selection {
+  width: 90%;
+  height: 10%;
+  padding-top: 20px;
+  font-size: 20px;
+}
+
+.file-initialize {
+  width: 90%;
+  height: 10%;
+  padding-top: 20px;
+  font-size: 20px;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>MMDA</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='reports.css') }}">
+</head>
+
+<body>
+  <div class="welcome">
+    <h1>{{title}}</h1>
+    <hr/>
+  </div>
+  <div class="sidebar">
+    <div class="sidebar-inner">
+      <a href="/" id="home-button">Home</a>
+      <a href="/reports" id="selected">Reports</a>
+      <hr/>
+      <a/>
+      <div class="side-no-home">
+        <a href="/metadata">Metadata Query</a>
+        <a href="/orphanreport">Orphan Report</a>
+        <a href="/sterilereport">Sterile Report</a>
+        <a href="/reach">Reach Query</a>
+        <a href="/timerange">Time-Range Query</a>
+      </div>
+    </div>
+  </div>
+  <div class="clear-floated"></div>
+  <div class="intro">
+    <h2>List of Available Reports & Descriptions</h2>
+    <hr />
+    <br />
+    <h3>1 - DAGR Metadata Query</h3>
+    <p>
+      Typically, we would like to write queries to find DAGRs using the metadata attributes, such as date, author, type, size, or keywords in the annotations.
+    </p>
+    <h3>2 - Orphan and Sterile Reports</h3>
+    <p>
+      Generate all the DAGRs that are not referenced by a parent DAGR or have no descendant DAGRs.
+    </p>
+    <h3>3 - Reach Queries</h3>
+    <p>
+      Very often we would like to find all the DAGRs that can be reached by a given DAGR (descendants) or those that point to it (ancestors).
+    </p>
+    <h3>4 - Time-Range DAGR Report</h3>
+    <p>
+      Generate a report with several preselected data items for all the DAGRs created or entered in a given time range.
+    </p>
+  </div>
+</body>
+
+</html>

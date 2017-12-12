@@ -1,0 +1,247 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Zachary Kolodny</title><meta name="generator" content="MATLAB 9.2"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-05-01"><meta name="DC.source" content="matlab3.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>Zachary Kolodny</h1><!--introduction--><p>UID: 112311827 - MATH241 - CALC III - MATLAB Project 3</p><!--/introduction-->
+    <pre class="codeinput">clear <span class="string">all</span>;
+syms <span class="string">x</span> <span class="string">y</span> <span class="string">z</span> <span class="string">theta</span> <span class="string">r</span> <span class="string">t</span> <span class="string">u</span>;
+</pre><h2 id="2">Task 1</h2><pre class="codeinput">int(int(int(x,z,0,9-x^2-y^2),y,0,x),x,0,2)
+</pre><pre class="codeoutput">
+ans =
+
+232/15
+
+</pre><h2 id="3">Task 2</h2><pre class="codeinput">int(int(int(z*r,z,0,10-r*cos(theta)),r,0,sin(theta)),theta,0,pi/2)
+</pre><pre class="codeoutput">
+ans =
+
+(1601*pi)/256 - 5/6
+
+</pre><h2 id="4">Task 3</h2><pre class="codeinput">clear <span class="string">all</span>;
+syms <span class="string">x</span> <span class="string">y</span> <span class="string">z</span> <span class="string">theta</span> <span class="string">r</span> <span class="string">t</span> <span class="string">u</span>;
+rbar = [3*cos(theta),y,3*sin(theta)];
+fsurf(rbar(1),rbar(2),rbar(3),[0,2*pi,-1,2])
+view([10 10 10])
+axis <span class="string">equal</span>
+</pre><img vspace="5" hspace="5" src="matlab3_01.png" style="width:560px;height:420px;" alt=""> <h2 id="5">Task 4</h2><pre class="codeinput">clear <span class="string">all</span>;
+syms <span class="string">x</span> <span class="string">y</span> <span class="string">z</span> <span class="string">theta</span> <span class="string">r</span> <span class="string">t</span> <span class="string">u</span>;
+rbar = [r*cos(theta),r*sin(theta),r];
+fsurf(rbar(1),rbar(2),rbar(3),[0,2,0,2*pi])
+view([10 10 10])
+axis <span class="string">equal</span>
+</pre><img vspace="5" hspace="5" src="matlab3_02.png" style="width:560px;height:420px;" alt=""> <h2 id="6">Task 5</h2><pre class="codeinput">clear <span class="string">all</span>;
+syms <span class="string">x</span> <span class="string">y</span> <span class="string">z</span> <span class="string">theta</span> <span class="string">r</span> <span class="string">t</span> <span class="string">u</span>;
+[x,y] = meshgrid(-5:1:5,-5:1:5);
+quiver(x,y,.2*(x+y),.2*(x-y),0)
+</pre><img vspace="5" hspace="5" src="matlab3_03.png" style="width:560px;height:420px;" alt=""> <h2 id="7">Task 6</h2><pre class="codeinput">clear <span class="string">all</span>;
+syms <span class="string">x</span> <span class="string">y</span> <span class="string">z</span> <span class="string">theta</span> <span class="string">r</span> <span class="string">t</span> <span class="string">u</span>;
+rbar = [cos(t),sin(t)];
+d = x^2 + y^4;
+length = @(u) sqrt(u*transpose(u));
+mag = simplify(length(diff(rbar,t)));
+sub = subs(d,[x,y],rbar);
+int(sub*mag,t,0,2*pi)
+</pre><pre class="codeoutput">
+ans =
+
+(7*pi)/4
+
+</pre><h2 id="8">Task 7</h2><pre class="codeinput">clear <span class="string">all</span>;
+syms <span class="string">x</span> <span class="string">y</span> <span class="string">z</span> <span class="string">theta</span> <span class="string">r</span> <span class="string">t</span> <span class="string">u</span>;
+rbar = [3*t,t,t];
+f = x + y;
+length = @(u) sqrt(u*transpose(u));
+mag = simplify(length(diff(rbar,t)));
+sub = subs(f,[x,y,z],rbar);
+int(sub*mag,0,1)
+</pre><pre class="codeoutput">
+ans =
+
+2*11^(1/2)
+
+</pre><h2 id="9">Task 8</h2><pre class="codeinput">clear <span class="string">all</span>;
+syms <span class="string">x</span> <span class="string">y</span> <span class="string">z</span> <span class="string">theta</span> <span class="string">r</span> <span class="string">t</span> <span class="string">u</span>;
+rbar = [0,2*cos(t),2*sin(t)];
+F = [x*y,y*z,y];
+sub = subs(F,[x,y,z],rbar);
+int(dot(sub,diff(rbar,t)),0,2*pi)
+</pre><pre class="codeoutput">
+ans =
+
+4*pi
+
+</pre><h2 id="10">Task 9</h2><pre class="codeinput">clear <span class="string">all</span>;
+syms <span class="string">x</span> <span class="string">y</span> <span class="string">z</span> <span class="string">theta</span> <span class="string">r</span> <span class="string">t</span> <span class="string">u</span>;
+rbar = [x,y,10-x-y];
+f = x^2+y^2;
+length = @(u) sqrt(u*transpose(u));
+mag = simplify(length(cross(diff(rbar,x),diff(rbar,y))));
+subresult = subs(f,[x,y,z],rbar);
+int(int(subresult*mag,x,-1,1),y,-1.1)
+</pre><pre class="codeoutput">
+ans =
+
+-(3^(1/2)*(1000*y^3 + 1000*y + 2431))/1500
+
+</pre><h2 id="11">Task 10</h2><pre class="codeinput">clear <span class="string">all</span>;
+syms <span class="string">x</span> <span class="string">y</span> <span class="string">z</span> <span class="string">theta</span> <span class="string">r</span> <span class="string">t</span> <span class="string">u</span>;
+rbar = [cos(t),sin(t),z];
+F = [y,-x,z];
+kross = simplify(cross(diff(-1*rbar,t),diff(rbar,z)));
+sub = subs(F,[y,-x,z],rbar);
+int(int(dot(sub,kross),z,0,3*sqrt(6)),t,0,2*pi)
+</pre><pre class="codeoutput">
+ans =
+
+-6*pi*6^(1/2)
+
+</pre><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2017a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Zachary Kolodny
+% UID: 112311827 -
+% MATH241 - CALC III -
+% MATLAB Project 3
+%%
+clear all;
+syms x y z theta r t u;
+
+%% Task 1
+int(int(int(x,z,0,9-x^2-y^2),y,0,x),x,0,2)
+
+%% Task 2
+int(int(int(z*r,z,0,10-r*cos(theta)),r,0,sin(theta)),theta,0,pi/2)
+
+%% Task 3
+clear all;
+syms x y z theta r t u;
+rbar = [3*cos(theta),y,3*sin(theta)];
+fsurf(rbar(1),rbar(2),rbar(3),[0,2*pi,-1,2])
+view([10 10 10])
+axis equal
+
+%% Task 4
+clear all;
+syms x y z theta r t u;
+rbar = [r*cos(theta),r*sin(theta),r];
+fsurf(rbar(1),rbar(2),rbar(3),[0,2,0,2*pi])
+view([10 10 10])
+axis equal
+
+%% Task 5
+clear all;
+syms x y z theta r t u;
+[x,y] = meshgrid(-5:1:5,-5:1:5);
+quiver(x,y,.2*(x+y),.2*(x-y),0)
+
+%% Task 6
+clear all;
+syms x y z theta r t u;
+rbar = [cos(t),sin(t)];
+d = x^2 + y^4;
+length = @(u) sqrt(u*transpose(u));
+mag = simplify(length(diff(rbar,t)));
+sub = subs(d,[x,y],rbar);
+int(sub*mag,t,0,2*pi)
+
+%% Task 7
+clear all;
+syms x y z theta r t u;
+rbar = [3*t,t,t];
+f = x + y;
+length = @(u) sqrt(u*transpose(u));
+mag = simplify(length(diff(rbar,t)));
+sub = subs(f,[x,y,z],rbar);
+int(sub*mag,0,1)
+
+%% Task 8
+clear all;
+syms x y z theta r t u;
+rbar = [0,2*cos(t),2*sin(t)];
+F = [x*y,y*z,y];
+sub = subs(F,[x,y,z],rbar);
+int(dot(sub,diff(rbar,t)),0,2*pi)
+
+%% Task 9
+clear all;
+syms x y z theta r t u;
+rbar = [x,y,10-x-y];
+f = x^2+y^2;
+length = @(u) sqrt(u*transpose(u));
+mag = simplify(length(cross(diff(rbar,x),diff(rbar,y))));
+subresult = subs(f,[x,y,z],rbar);
+int(int(subresult*mag,x,-1,1),y,-1.1)
+
+%% Task 10
+clear all;
+syms x y z theta r t u;
+rbar = [cos(t),sin(t),z];
+F = [y,-x,z];
+kross = simplify(cross(diff(-1*rbar,t),diff(rbar,z)));
+sub = subs(F,[y,-x,z],rbar);
+int(int(dot(sub,kross),z,0,3*sqrt(6)),t,0,2*pi)
+##### SOURCE END #####
+--></body></html>

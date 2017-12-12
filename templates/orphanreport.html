@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>MMDA</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='orphanreport.css') }}">
+</head>
+
+<body>
+  <div class="welcome">
+    <h1>{{title}}</h1>
+    <hr/>
+  </div>
+  <div class="sidebar">
+    <div class="sidebar-inner">
+      <a href="/" id="home-button">Home</a>
+      <a href="/reports" id="reports-button">Reports</a>
+      <hr/>
+      <a/>
+      <div class="side-no-home">
+        <a href="/metadata">Metadata Query</a>
+        <a href="/orphanreport" id="selected">Orphan Report</a>
+        <a href="/sterilereport">Sterile Report</a>
+        <a href="/reach">Reach Query</a>
+        <a href="/timerange">Time-Range Query</a>
+      </div>
+    </div>
+  </div>
+  <div class="clear-floated"></div>
+  <div class="intro">
+    <form method="POST">
+      <select name="types" class="type-selection">
+        {% for x in type_list %}
+        <option value="{{ x }}" {% if loop.first %} SELECTED{% endif %}>{{ x }}</option>
+        {% endfor %}
+      </select>
+      <input class="gen-report" type="submit" value="Generate" name="submit" />
+    </form>
+  </div>
+</body>
+
+</html>
